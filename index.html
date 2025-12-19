@@ -15,71 +15,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
   <link rel="stylesheet" href="css/style.css">
-  
-  <style>
-    .birthday-popup {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      padding: 25px;
-      text-align: center;
-      width: 280px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      border: 2px solid #FF6B9D;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .birthday-popup:before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      background: linear-gradient(45deg, #FF6B9D, #FFD166, #06D6A0, #118AB2);
-      z-index: -1;
-      border-radius: 25px;
-      opacity: 0.3;
-    }
-    
-    .birthday-title {
-      font-size: 28px;
-      font-weight: bold;
-      color: #FF6B9D;
-      margin-bottom: 10px;
-      font-family: 'Mountains of Christmas', cursive;
-      text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.8);
-    }
-    
-    .birthday-message {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 15px;
-      line-height: 1.4;
-    }
-    
-    .birthday-subtitle {
-      font-size: 16px;
-      color: #118AB2;
-      font-weight: bold;
-      font-style: italic;
-    }
-    
-    .birthday-icon {
-      font-size: 40px;
-      color: #FFD166;
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
-    }
-    
-    .tap-text {
-      font-size: 14px;
-      color: #888;
-      margin-top: 10px;
-      font-style: italic;
-    }
-  </style>
 </head>
 
 <body>
@@ -118,19 +53,9 @@
       </div>
       <div class="line"></div>
     </div>
-    
-    <!-- Popup Birthday Message (Replaced PNG image) -->
-    <div unselectable="on" draggable="false" ondragstart="return false;" class="message-overlay" id="message-overlay" 
-         style="visibility: hidden; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-      <div class="birthday-popup" onclick="imgClick()">
-        <div class="birthday-icon">🎁</div>
-        <div class="birthday-title">Happy Birthday!</div>
-        <div class="birthday-message">A special gift is waiting for you!</div>
-        <div class="birthday-subtitle">Tap to open your surprise</div>
-        <div class="tap-text">(Click anywhere on this card)</div>
-      </div>
+    <div unselectable="on" draggable="false" ondragstart="return false;" class="message-overlay" id="message-overlay">
+      <img onclick="imgClick()" src="https://image.ibb.co/kUJrjw/Pop_up_text.png" alt="Pop_up_text">
     </div>
-    
     <!-- GIFT BOX SOURCE CODE: https://tympanus.net/codrops/2013/12/24/merry-christmas-with-a-bursting-gift-box/ -->
     <div id="merrywrap" class="merrywrap">
       <canvas id="snowfall"></canvas>
@@ -179,13 +104,6 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.min.js'></script>
   <script src="js/index.js"></script>
-  
-  <script>
-    // تابع imgClick برای استفاده در HTML
-    function imgClick() {
-      $("#message-overlay").click();
-    }
-  </script>
 </body>
 
 </html>
