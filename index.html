@@ -1,147 +1,336 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Gift box iPhone X</title>
+  <title>Birthday Gift iPhone Surprise</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-      <link rel="stylesheet" href="styles/index.processed.css">
-<link rel="preload" href="https://image.ibb.co/iOQOUw/iphone_x_wallpaper_drodviews.png">
-<link rel="preload" href="https://image.ibb.co/d4Go1b/qwe.png">
-<link rel="preload" href="https://preview.ibb.co/dGjspw/Untitled_1.png">
-<link rel="preload" href="https://image.ibb.co/kZE3wb/medium_connection_filled.png">
-<link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Mountains+of+Christmas" rel="stylesheet">
 
-      <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+    }
 
-  
+    .iphone {
+      position: relative;
+      width: 375px;
+      height: 812px;
+    }
+
+    #iphone {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .content {
+      position: absolute;
+      top: 50px;
+      left: 28px;
+      width: 320px;
+      height: 712px;
+      background-size: cover;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+
+    .top-notch {
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-size: 12px;
+      padding: 0 60px;
+    }
+
+    .clock-text-overlay {
+      top: 10%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #clock-text {
+      font-size: 230%;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    .date-overlay {
+      top: 19%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      text-align: center;
+    }
+
+    #date-text {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .line {
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 140px;
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+    }
+
+    .message-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      background: rgba(0,0,0,0.3);
+    }
+
+    .message-overlay img {
+      max-width: 90%;
+      cursor: pointer;
+    }
+
+    .merrywrap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .giftbox {
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      height: 180px;
+      cursor: pointer;
+      background: radial-gradient(circle, #ff69b4, #ffd700);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .cover {
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      background: #ffd700;
+      top: 0;
+      border-radius: 20px 20px 0 0;
+    }
+
+    .box {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 120px;
+      background: #ff69b4;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 200px;
+      background: #ffd700;
+    }
+
+    .ribbon-horizontal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: 40px;
+      background: #ffd700;
+    }
+
+    .icons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      z-index: 6;
+    }
+
+    .row span {
+      font-size: 60px;
+      margin: 0 8px;
+      display: inline-block;
+      animation: bounce 2s infinite;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+
+    #snowfall {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
 </head>
 
 <body>
 
-  <body>
-
   <div class="iphone">
-  <img id="iphone" unselectable="on" draggable="false" ondragstart="return false;" class="iphone" src="https://preview.ibb.co/dGjspw/Untitled_1.png" alt="iphone">
-<!--   <div class="loader"></div> -->
-  <div class="content" style="background-image:url('https://image.ibb.co/iOQOUw/iphone_x_wallpaper_drodviews.png');">
-    <div class="top-notch">
+    <img id="iphone" src="https://preview.ibb.co/dGjspw/Untitled_1.png" alt="iPhone frame">
 
-          <div class="icons-left">
-            
-            <span id="temp-notch"></span>
-            
-          </div>
-
-          <div class="icons-right">
-            <i class="signal-icon"><img src="https://image.ibb.co/kZE3wb/medium_connection_filled.png"></i>
-            <i style="margin-left: 1px" class="fa fa-wifi" aria-hidden="true"></i>
-            <i style="margin-left: 1px" class="fa fa-battery-full" aria-hidden="true"></i>
-
-          </div>
-
+    <!-- تصویر پس‌زمینه جدید جشن تولد با بادکنک، کنفتی و کیک -->
+    <div class="content" style="background-image:url('https://png.pngtree.com/background/20250415/original/pngtree-joyful-birthday-celebration-with-cake-and-balloon-picture-image_16450956.jpg');">
+      <div class="top-notch">
+        <div class="icons-left">
+          <span id="temp-notch">9:41</span>
         </div>
-    <div class="lock-icon" id="lock-icon">
-      <img src="https://preview.ibb.co/b8nkbb/fldhjvdceuocivfarxur.png">
-    </div>
-    
-    <div class"clock-text-overlay" id="clock-text-overlay" style="top: 10%;position: absolute;left: 50%;transform: translateX(-50%);">
-      <h1 id="clock-text" style="font-size:230%;font-weight: 400;color: #fff;transform: scale(0.9, 1.1);"></h1>
-    </div>
-    
-    <div class"date-overlay" id="date-overlay" style="top: 19%;position: absolute;left:50%;transform:translateX(-50%);display:flex;width:100%;justify-content:center;">
-      <h5 id="date-text" style="color:#fff;font-weight:500;transform: scale(1, 1.1);"></h5>
-    </div>
-    
-    <div class="touch-overlay" id="touch-overlay">
-      <div class="left-touch">
-        <img src="https://image.ibb.co/ddOC7G/icon_flashlight.png" alt="icon_flashlight">
+        <div class="icons-right">
+          <i class="fa fa-signal"></i>
+          <i class="fa fa-wifi"></i>
+          <i class="fa fa-battery-full"></i>
+        </div>
       </div>
-      <div class="right-touch">
-        <img src="https://image.ibb.co/bFEr1b/icon_camera.png" alt="icon_camera">
+
+      <div class="clock-text-overlay">
+        <h1 id="clock-text">9:41</h1>
       </div>
+
+      <div class="date-overlay">
+        <h5 id="date-text">Friday, December 19</h5>
+      </div>
+
+      <div class="line"></div>
     </div>
-    
-    <div class="line"></div>
-    
-  </div>
-    
-    <div unselectable="on" draggable="false" ondragstart="return false;" class="message-overlay" id="message-overlay">
-      <img onclick="imgClick()" src="https://image.ibb.co/kUJrjw/Pop_up_text.png" alt="Pop_up_text">
+
+    <div class="message-overlay" id="message-overlay">
+      <!-- تصویر پاپ‌آپ جشن تولد جدید -->
+      <img onclick="alert('تولدت مبارک! آرزوی بهترین‌ها رو برات دارم 🎉🎂🍾')" src="https://img.freepik.com/free-vector/happy-birthday-flags-balloons-card-background_1035-23625.jpg" alt="Happy Birthday Message">
     </div>
-    
-    <!-- GIFT BOX SOURCE CODE: https://tympanus.net/codrops/2013/12/24/merry-christmas-with-a-bursting-gift-box/ -->
-    
+
     <div id="merrywrap" class="merrywrap">
-    <canvas id="snowfall"></canvas>
-    <div class="giftbox">
-      <div class="cover">
-        <div></div>
+      <canvas id="snowfall"></canvas>
+      <div class="giftbox" onclick="openGift()">
+        <div class="cover"><div></div></div>
+        <div class="box"></div>
+        <div class="ribbon"></div>
+        <div class="ribbon-horizontal"></div>
       </div>
-      <div class="box"></div>
-    </div>
-    <div class="icons">
-      <div class="row"> 
-        <span>M</span>
-        <span>e</span>
-        <span>r</span>
-        <span>r</span>
-        <span>y</span> 
-      </div>
-      <div class="row">
-          <span class="letter">C</span>
-          <span class="letter">h</span>
-          <span class="letter">r</span>
+      <div class="icons">
+        <div class="row"> 
+          <span>H</span>
+          <span>a</span>
+          <span>p</span>
+          <span>p</span>
+          <span>y</span> 
+        </div>
+        <div class="row">
+          <span class="letter">B</span>
           <span class="letter">i</span>
-          <span class="letter">s</span>
-          <span class="letter">t</span>
-          <span class="letter">m</span>
-          <span class="letter">a</span>
-          <span class="letter">s</span>
-      </div>
-      <div class="row"> 
-        <span>a</span>
-        <span>n</span>
-        <span>d</span> 
-      </div>
-      <div class="row"> 
-        <span>h</span>
-        <span>a</span>
-        <span>p</span> 
-        <span>p</span> 
-        <span>y</span> 
-      </div>
-      <div class="row">
-          <span class="letter">n</span>
-          <span class="letter">e</span>
-          <span class="letter">w</span>
-          <span class="letter"> </span>
-          <span class="letter">y</span>
-          <span class="letter">e</span>
-          <span class="letter">a</span>
           <span class="letter">r</span>
+          <span class="letter">t</span>
+          <span class="letter">h</span>
+          <span class="letter">d</span>
+          <span class="letter">a</span>
+          <span class="letter">y</span>
+          <span class="letter">!</span>
+        </div>
       </div>
     </div>
   </div>
-    
-    <!-- ========================= -->
-    <div> <!-- for footer -->
-      <h5 id="footer" class="title"><a href="http://alchristleo.net/" target="_blank">Alchrist Leo</a> | <a href="https://github.com/alchristleo" target="_blank">Github</a> | <a href="https://www.linkedin.com/in/alchrist-leo-0b7851100/" target="_blank"> LinkedIn </a></h5>
-    </div> <!-- end footer -->
-</div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.min.js'></script>
 
-  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script>
+    function openGift() {
+      $('.giftbox').addClass('animated bounceOutUp');
+      setTimeout(() => {
+        $('#message-overlay').fadeIn();
+        $('.giftbox').hide();
+        $('.icons').hide();
+      }, 1000);
+    }
 
-    <script  src="js/index.js"></script>
+    // افکت کنفتی/برف رنگی جشن (به جای برف سفید)
+    const canvas = document.getElementById('snowfall');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
+    const confetti = [];
+    const colors = ['#ff69b4', '#ffd700', '#00ff00', '#00bfff', '#ff4500'];
+    for (let i = 0; i < 150; i++) {
+      confetti.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 6 + 2,
+        d: Math.random() * 150,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        tilt: Math.random() * 10 - 5
+      });
+    }
 
+    function drawConfetti() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      confetti.forEach(c => {
+        ctx.beginPath();
+        ctx.lineWidth = c.r;
+        ctx.strokeStyle = c.color;
+        ctx.moveTo(c.x + c.tilt + c.r / 2, c.y);
+        ctx.lineTo(c.x + c.tilt, c.y + c.tilt + c.r / 2);
+        ctx.stroke();
+      });
+      updateConfetti();
+      requestAnimationFrame(drawConfetti);
+    }
 
+    function updateConfetti() {
+      confetti.forEach(c => {
+        c.y += c.r / 2 + 1;
+        if (c.y > canvas.height) c.y = -10;
+        c.x += Math.sin(c.d) * 1.5;
+        c.tilt = 10 * Math.sin(c.d);
+      });
+    }
+
+    drawConfetti();
+  </script>
 
 </body>
 
