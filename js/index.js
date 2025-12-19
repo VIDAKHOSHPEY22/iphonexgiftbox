@@ -100,7 +100,7 @@ $(document).ready(function(){
     $("#message-overlay").remove();
     $("#touch-overlay").remove();
     birthdaySong.play();
-    $(".content").css('background-image', 'url(https://github.com/VIDAKHOSHPEY22/iphonexgiftbox/blob/67e9a6e349121725b31ed5edd079a869ddfe523e/%E2%80%94Pngtree%E2%80%94happy%20birthday%20background_1595305%20(1).png)');
+    $(".content").css('background-image', 'url(https://github.com/VIDAKHOSHPEY22/iphonexgiftbox/blob/67e9a6e349121725b31ed5edd079a869ddfe523e/%E2%80%94Pngtree%E2%80%94happy%20birthday%20background_1595305%20(1).png');
     document.getElementById("temp-notch").innerHTML = x;
     mw.style.visibility = "visible";
     giftAnimation();
