@@ -43,11 +43,11 @@ document.getElementById("temp-notch").innerHTML = o;
 var message = document.getElementById('message-overlay');
 var mw = document.getElementById('merrywrap');
 var audio = new Howl({
-  src: ['https://s0.vocaroo.com/media/download_temp/Vocaroo_s0E0FP15QAsj.mp3'],
+  src: ['https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3'],
   volume: 1
 });
-var mcSong = new Howl({
-  src: ['https://ia802604.us.archive.org/12/items/WeWishYouAMerryChristmas_123/WeWishYouAMerryChristmas_64kb.mp3'],
+var birthdaySong = new Howl({
+  src: ['https://assets.mixkit.co/music/preview/mixkit-happy-birthday-to-you-443.mp3'],
   volume: 0.5,
   loop: true,
 });
@@ -99,7 +99,7 @@ $(document).ready(function(){
     $("#date-overlay").remove();
     $("#message-overlay").remove();
     $("#touch-overlay").remove();
-    mcSong.play();
+    birthdaySong.play();
     $(".content").css('background-image', 'url(https://image.ibb.co/d4Go1b/qwe.png)');
     document.getElementById("temp-notch").innerHTML = x;
     mw.style.visibility = "visible";
